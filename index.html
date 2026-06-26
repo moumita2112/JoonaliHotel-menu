@@ -25,7 +25,7 @@
       radial-gradient(ellipse at 10% 0%, rgba(184,137,42,0.06) 0%, transparent 60%),
       radial-gradient(ellipse at 90% 100%, rgba(176,28,28,0.04) 0%, transparent 60%);
   }
-
+ 
   /* HEADER */
   .header { background: var(--ink); position: relative; overflow: hidden; }
   .header::after { content:''; display:block; height:4px; background:linear-gradient(90deg,var(--red),var(--gold),var(--red)); }
@@ -35,7 +35,7 @@
   .hotel-name { font-family:'Cormorant Garamond',serif; font-size:42px; font-weight:700; color:var(--red); letter-spacing:0.06em; line-height:1; text-shadow:0 2px 20px rgba(176,28,28,0.3); }
   .hotel-sub { font-family:'Cormorant Garamond',serif; font-size:14px; font-style:italic; color:rgba(212,170,85,0.7); margin-top:8px; letter-spacing:0.1em; }
   .date-line { display:inline-block; margin-top:16px; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(212,170,85,0.5); border-top:1px solid rgba(212,170,85,0.2); border-bottom:1px solid rgba(212,170,85,0.2); padding:5px 18px; }
-
+ 
   /* TAB BAR */
   .tab-bar { max-width:500px; margin:18px auto 0; padding:0 20px; display:flex; gap:8px; }
   .tab-btn { flex:1; padding:10px 6px; border:none; border-radius:8px; font-family:'Jost',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; transition:all 0.2s; background:rgba(184,137,42,0.1); color:var(--muted); }
@@ -44,7 +44,7 @@
   .tab-btn.eid-btn.active { background:linear-gradient(135deg,#7B1818,#B8892A); color:#fff; }
   .tab-panel { display:none; }
   .tab-panel.active { display:block; }
-
+ 
   /* EID BANNER */
   .eid-banner { max-width:500px; margin:16px auto 0; padding:0 20px; }
   .eid-banner-inner { background:linear-gradient(135deg,#2C0A0A,#1A0F00); border:1px solid rgba(201,151,42,0.4); border-radius:12px; padding:16px 20px; text-align:center; position:relative; overflow:hidden; }
@@ -52,17 +52,17 @@
   .eid-star { font-size:22px; display:block; margin-bottom:4px; position:relative; }
   .eid-title { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:700; color:#E8C97A; letter-spacing:0.15em; position:relative; }
   .eid-sub { font-size:10px; color:rgba(212,170,85,0.6); letter-spacing:0.25em; text-transform:uppercase; margin-top:5px; position:relative; }
-
+ 
   /* ORNAMENT */
   .orn { text-align:center; padding:22px 0 6px; color:var(--gold); font-size:11px; letter-spacing:10px; opacity:0.6; }
-
+ 
   /* SECTION */
   .section { max-width:500px; margin:20px auto 0; padding:0 20px; animation:rise 0.5s cubic-bezier(.22,1,.36,1) both; }
   @keyframes rise { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
   .section-label { display:flex; align-items:center; gap:14px; margin-bottom:16px; }
   .section-label::before,.section-label::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:0.5; }
   .section-name { font-family:'Cormorant Garamond',serif; font-size:15px; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); white-space:nowrap; }
-
+ 
   /* CARD & ITEMS */
   .card { background:#fff; border-radius:10px; border:1px solid rgba(184,137,42,0.15); overflow:hidden; box-shadow:0 2px 12px var(--shadow),0 1px 3px rgba(0,0,0,0.04); margin-bottom:6px; }
   .card-eid { background:#fff; border-radius:10px; border:1px solid rgba(176,28,28,0.18); overflow:hidden; box-shadow:0 2px 12px rgba(176,28,28,0.06); margin-bottom:6px; }
@@ -76,17 +76,18 @@
   .item-price { font-family:'Cormorant Garamond',serif; font-size:17px; font-weight:600; color:var(--gold); white-space:nowrap; flex-shrink:0; }
   .card-eid .item-price { color:var(--red); }
   .item-price span { font-size:11px; font-family:'Jost',sans-serif; color:var(--muted); font-weight:400; }
-
+ 
   /* BADGES */
   .badge { display:inline-block; font-size:9px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:2px 7px; border-radius:3px; margin-left:7px; vertical-align:middle; font-family:'Jost',sans-serif; }
   .b-veg     { background:#E8F5E9; color:#2E7D32; }
   .b-fish    { background:#E3F2FD; color:#1565C0; }
   .b-egg     { background:#FFF8E1; color:#F57F17; }
   .b-chicken { background:#FBE9E7; color:#BF360C; }
+  .b-mutton  { background:#EFEBE9; color:#5D4037; }
   .b-prawn   { background:#FCE4EC; color:#880E4F; }
   .b-special { background:#FFF3E0; color:#E65100; }
   .icon-veg  { font-size:10px; vertical-align:middle; }
-
+ 
   /* FOOTER */
   .footer { max-width:500px; margin:32px auto 0; padding:0 20px; text-align:center; }
   .footer hr { border:none; height:1px; background:linear-gradient(90deg,transparent,var(--divider),transparent); margin-bottom:16px; }
@@ -95,7 +96,7 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- HEADER -->
 <div class="header">
   <div class="header-inner">
@@ -105,38 +106,46 @@
     <p class="date-line" id="today"></p>
   </div>
 </div>
-
+ 
 <div class="orn">— ✦ —</div>
-
+ 
   <div class="section">
     <div class="section-label"><span class="section-name">Today's Menu</span></div>
     <div class="card">
-
+ 
       <div class="item">
         <div class="item-left"><p class="item-name"><span class="icon-veg">🟢</span> Veg Thali <span class="badge b-veg">Veg</span></p></div>
         <p class="item-price">₹70</p>
       </div>
-
+ 
       <div class="item">
         <div class="item-left"><p class="item-name">🍗 Chicken Thali <span class="badge b-chicken">Chicken</span></p></div>
         <p class="item-price">₹130</p>
       </div>
-
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍖 Mutton Thali <span class="badge b-mutton">Mutton</span></p></div>
+        <p class="item-price">₹190</p>
+      </div>
+ 
       <div class="item">
         <div class="item-left"><p class="item-name">🐟 Katla Thali <span class="badge b-fish">Fish</span></p></div>
         <p class="item-price">₹140</p>
       </div>
-
+ 
       <div class="item">
         <div class="item-left"><p class="item-name">🐟 Small Fish Thali <span class="badge b-fish">Fish</span></p></div>
         <p class="item-price">₹130</p>
       </div>
-
+ 
       <div class="item">
         <div class="item-left"><p class="item-name">🐟 Small Fish Fry <span class="badge b-fish">Fish</span></p></div>
         <p class="item-price">₹60</p>
       </div>
-
+     <div class="item">
+        <div class="item-left"><p class="item-name">🐟 Fish Chorchori <span class="badge b-fish">Fish</span></p></div>
+        <p class="item-price">₹80</p>
+      </div>
+ 
        <div class="item">
         <div class="item-left"><p class="item-name"><span class="icon-veg">🟢</span> Paneer Thali <span class="badge b-veg">Veg</span></p></div>
         <p class="item-price">₹130</p>
@@ -149,7 +158,7 @@
         <div class="item-left"><p class="item-name"><span class="icon-veg">🟢</span> Paneer Butter Masala Half <span class="badge b-veg">Veg</span></p></div>
         <p class="item-price">₹70</p>
       </div>
-
+ 
       <div class="item">
         <div class="item-left">
           <p class="item-name">🍚 Dum Biryani Full <span class="badge b-special">Special</span></p>
@@ -157,7 +166,7 @@
         </div>
         <p class="item-price">₹150</p>
       </div>
-
+ 
       <div class="item">
         <div class="item-left">
           <p class="item-name">🍚 Dum Biryani Half <span class="badge b-special">Special</span></p>
@@ -165,38 +174,38 @@
         </div>
         <p class="item-price">₹80</p>
       </div>
-
+ 
       <div class="item">
         <div class="item-left"><p class="item-name"><span class="icon-veg">🟢</span> Veg Tadka <span class="badge b-veg">Veg</span></p></div>
         <p class="item-price">₹60</p>
       </div>
-
+ 
       <div class="item">
         <div class="item-left"><p class="item-name">🥚 Egg Tadka <span class="badge b-egg">Egg</span></p></div>
         <p class="item-price">₹80</p>
       </div>
-
+ 
       <div class="item">
         <div class="item-left"><p class="item-name"><span class="icon-veg">🟢</span> Roti <span class="badge b-veg">Veg</span></p></div>
         <p class="item-price">₹10 <span>/ piece</span></p>
       </div>
-
+ 
       <div class="item">
         <div class="item-left"><p class="item-name"><span class="icon-veg">🟢</span> Butter Roti <span class="badge b-veg">Veg</span></p></div>
         <p class="item-price">₹15 <span>/ piece</span></p>
       </div>
-
+ 
     </div>
   </div>
 </div>
-
+ 
 <!-- FOOTER -->
 <div class="footer">
   <hr>
   <p class="footer-text">Thank you for dining at Jonali Hotel</p>
   <p class="footer-note">Menu subject to availability · Prices inclusive of all charges</p>
 </div>
-
+ 
 <script>
   const d = new Date();
   document.getElementById('today').textContent = d.toLocaleDateString('en-IN', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
