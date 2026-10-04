@@ -77,6 +77,24 @@
   .footer-text { font-family:'Cormorant Garamond',serif; font-size:13px; font-style:italic; color:var(--muted); letter-spacing:0.05em; }
   .footer-note { font-size:10px; color:rgba(122,96,64,0.6); margin-top:5px; letter-spacing:0.05em; }
 
+
+  /* TABS */
+  .tabs { position:sticky; top:0; z-index:10; display:flex; gap:8px; max-width:500px; margin:0 auto; padding:12px 20px; background:var(--paper); border-bottom:1px solid var(--divider); }
+  .tab { flex:1; font-family:'Jost',sans-serif; font-size:13px; font-weight:500; letter-spacing:0.04em; padding:10px 8px; border-radius:8px; border:1px solid rgba(184,137,42,0.35); background:#fff; color:var(--muted); cursor:pointer; transition:background 0.15s,color 0.15s; }
+  .tab.active { background:var(--ink); color:#F0D488; border-color:var(--ink); }
+  .tab-puja { display:inline-flex; align-items:center; justify-content:center; gap:7px; }
+  .maa-face { width:30px; height:30px; flex-shrink:0; margin:-6px 0; }
+  .tab-puja.active { background:var(--red); color:#FFE9A8; border-color:var(--red); }
+  .tab:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+  .tab-panel[hidden] { display:none; }
+
+  /* DURGA POOJA BANNER */
+  .puja-banner { max-width:460px; margin:22px auto 0; padding:18px 20px; text-align:center; border-radius:10px; background:linear-gradient(135deg,#B01C1C,#8E1414); box-shadow:0 2px 12px var(--shadow); border:1px solid rgba(255,210,63,0.35); }
+  .puja-title { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:700; color:#FFD23F; letter-spacing:0.04em; }
+  .puja-sub { font-family:'Noto Serif Bengali','Cormorant Garamond',serif; font-size:13px; color:#FFE9A8; margin-top:4px; }
+  @media (max-width:500px){ .puja-banner { margin:22px 20px 0; } }
+  @media (prefers-reduced-motion:reduce){ .section { animation:none; } }
+
   @media (max-width:430px){
     .hotel-name { font-size:38px; }
     .hotel-name-as { font-size:38px; }
@@ -96,6 +114,32 @@
   </div>
 </div>
  
+
+<nav class="tabs" role="tablist" aria-label="Menu">
+  <button class="tab tab-puja active" id="btn-durga" role="tab" aria-selected="true" aria-controls="tab-durga" data-tab="durga">
+    <svg class="maa-face" viewBox="0 0 64 64" aria-hidden="true">
+      <path d="M8 30 L14 12 L22 20 L32 4 L42 20 L50 12 L56 30 Z" fill="#FFD23F" stroke="#B8892A" stroke-width="1.5"/>
+      <circle cx="32" cy="14" r="3" fill="#B01C1C"/><circle cx="18" cy="22" r="2" fill="#B01C1C"/><circle cx="46" cy="22" r="2" fill="#B01C1C"/>
+      <path d="M10 30 Q6 50 16 60 L48 60 Q58 50 54 30 Z" fill="#1A0F00"/>
+      <ellipse cx="32" cy="40" rx="17" ry="19" fill="#F6B54A" stroke="#B8892A" stroke-width="1"/>
+      <path d="M17 31 Q32 26 47 31" fill="none" stroke="#B01C1C" stroke-width="2"/>
+      <path d="M32 26 Q34.5 30 32 34 Q29.5 30 32 26 Z" fill="#B01C1C"/>
+      <path d="M20 37 Q25 33 30 37" fill="none" stroke="#1A0F00" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M34 37 Q39 33 44 37" fill="none" stroke="#1A0F00" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M19 41 Q25 36 31 41 Q25 44 19 41 Z" fill="#fff" stroke="#1A0F00" stroke-width="1.2"/>
+      <path d="M33 41 Q39 36 45 41 Q39 44 33 41 Z" fill="#fff" stroke="#1A0F00" stroke-width="1.2"/>
+      <circle cx="25.5" cy="40.6" r="1.9" fill="#1A0F00"/><circle cx="38.5" cy="40.6" r="1.9" fill="#1A0F00"/>
+      <path d="M32 42 L30.5 48 Q32 49 33.5 48" fill="none" stroke="#B8892A" stroke-width="1"/>
+      <circle cx="33.6" cy="47.6" r="1.1" fill="#FFD23F" stroke="#B8892A" stroke-width=".5"/>
+      <path d="M27.5 52.5 Q32 55.5 36.5 52.5 Q32 53.5 27.5 52.5 Z" fill="#B01C1C"/>
+      <circle cx="14" cy="44" r="2.5" fill="#FFD23F" stroke="#B8892A" stroke-width=".6"/><circle cx="50" cy="44" r="2.5" fill="#FFD23F" stroke="#B8892A" stroke-width=".6"/>
+    </svg>
+    <span>Durga Pooja Menu</span>
+  </button>
+  <button class="tab" id="btn-regular" role="tab" aria-selected="false" aria-controls="tab-regular" data-tab="regular">Regular Menu</button>
+</nav>
+
+<div class="tab-panel" id="tab-regular" role="tabpanel" aria-labelledby="btn-regular" hidden>
 <div class="orn">— ✦ —</div>
  
   <!-- THALI -->
@@ -314,6 +358,202 @@
     </div>
   </div>
  
+</div>
+
+<div class="tab-panel" id="tab-durga" role="tabpanel" aria-labelledby="btn-durga">
+  <div class="puja-banner"><p class="puja-title">Durga Pooja Special</p><p class="puja-sub">শুভ শাৰদীয়া · Festive menu for the Pooja days</p></div>
+
+  <div class="section">
+    <div class="section-label"><span class="section-name">Starters</span></div>
+    <div class="card">
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍗 Chicken Lollypop <span class="badge b-chicken">Chicken</span></p></div>
+        <p class="item-price">₹109</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍗 Crispy Chicken <span class="badge b-chicken">Chicken</span></p></div>
+        <p class="item-price">₹149</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍗 Chicken Pakoda <span class="badge b-chicken">Chicken</span></p></div>
+        <p class="item-price">₹109</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍗 Chicken Drumstick <span class="badge b-chicken">Chicken</span></p></div>
+        <p class="item-price">₹159</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍗 Drums of Heaven <span class="badge b-chicken">Chicken</span></p></div>
+        <p class="item-price">₹209</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label"><span class="section-name">Rice</span></div>
+    <div class="card">
+
+      <div class="item">
+        <div class="item-left"><p class="item-name"><span class="icon-veg">🟢</span> Plain Rice <span class="badge b-veg">Veg</span></p></div>
+        <p class="item-price">₹60</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍚 Fried Rice <span class="badge b-veg">Veg</span></p></div>
+        <p class="item-price">₹129</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍚 Veg Pulao <span class="badge b-veg">Veg</span></p></div>
+        <p class="item-price">₹159</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍚 Biryani <span class="badge b-special">Special</span></p></div>
+        <p class="item-price">₹199</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label"><span class="section-name">Breads</span></div>
+    <div class="card">
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🫓 Paneer Moglai Paratha <span class="badge b-veg">Veg</span></p></div>
+        <p class="item-price">₹109</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🫓 Egg Moglai Paratha <span class="badge b-egg">Egg</span></p></div>
+        <p class="item-price">₹99</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🫓 Chicken Moglai Paratha <span class="badge b-chicken">Chicken</span></p></div>
+        <p class="item-price">₹149</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label"><span class="section-name">Non-Veg Gravy</span></div>
+    <div class="card">
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍗 Chicken Chaap <span class="badge b-chicken">Chicken</span></p></div>
+        <p class="item-price">₹239</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍗 Chicken Curry <span class="badge b-chicken">Chicken</span></p></div>
+        <p class="item-price">₹259</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍗 Chicken Kosha <span class="badge b-chicken">Chicken</span></p></div>
+        <p class="item-price">₹279</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍗 Chicken Masala <span class="badge b-chicken">Chicken</span></p></div>
+        <p class="item-price">₹199</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍗 Chicken Butter Masala <span class="badge b-chicken">Chicken</span></p></div>
+        <p class="item-price">₹229</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍗 Chicken Do Pyaaza <span class="badge b-chicken">Chicken</span></p></div>
+        <p class="item-price">₹229</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍗 Chicken Haandi <span class="badge b-chicken">Chicken</span></p></div>
+        <p class="item-price">₹279</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍗 Chicken Kadai <span class="badge b-chicken">Chicken</span></p></div>
+        <p class="item-price">₹269</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍖 Mutton Curry <span class="badge b-mutton">Mutton</span></p></div>
+        <p class="item-price">₹359</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍖 Mutton Kosha <span class="badge b-mutton">Mutton</span></p></div>
+        <p class="item-price">₹399</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍖 Mutton Masala <span class="badge b-mutton">Mutton</span></p></div>
+        <p class="item-price">₹379</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍖 Mutton Butter Masala <span class="badge b-mutton">Mutton</span></p></div>
+        <p class="item-price">₹299</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍖 Mutton Do Pyaaza <span class="badge b-mutton">Mutton</span></p></div>
+        <p class="item-price">₹389</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍖 Mutton Haandi <span class="badge b-mutton">Mutton</span></p></div>
+        <p class="item-price">₹379</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name">🍖 Mutton Kadai <span class="badge b-mutton">Mutton</span></p></div>
+        <p class="item-price">₹359</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label"><span class="section-name">Veg Gravy</span></div>
+    <div class="card">
+
+      <div class="item">
+        <div class="item-left"><p class="item-name"><span class="icon-veg">🟢</span> Dal Fry <span class="badge b-veg">Veg</span></p></div>
+        <p class="item-price">₹129</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name"><span class="icon-veg">🟢</span> Paneer Butter Masala <span class="badge b-veg">Veg</span></p></div>
+        <p class="item-price">₹239</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name"><span class="icon-veg">🟢</span> Shahi Paneer <span class="badge b-veg">Veg</span></p></div>
+        <p class="item-price">₹239</p>
+      </div>
+
+      <div class="item">
+        <div class="item-left"><p class="item-name"><span class="icon-veg">🟢</span> Mix Veg <span class="badge b-veg">Veg</span></p></div>
+        <p class="item-price">₹239</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <div class="footer">
   <hr>
@@ -324,6 +564,16 @@
 <script>
   const d = new Date();
   document.getElementById('today').textContent = d.toLocaleDateString('en-IN', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+      document.querySelectorAll('.tab-panel').forEach(p => p.hidden = true);
+      document.getElementById('tab-' + btn.dataset.tab).hidden = false;
+      window.scrollTo({ top: document.querySelector('.tabs').offsetTop, behavior: 'smooth' });
+    });
+  });
 </script>
 </body>
 </html>
